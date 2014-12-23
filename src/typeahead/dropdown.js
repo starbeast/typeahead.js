@@ -67,6 +67,9 @@ var Dropdown = (function() {
       this.isEmpty ? this._hide() : (this.isOpen && this._show());
 
       this.trigger('datasetRendered');
+      //Now we also trigger datasetRendered on the $menu element.
+      //Now you can precisely understand when you can refresh your custom scrollbars or something.
+      this.$menu.trigger('datasetRendered');
 
       function isDatasetEmpty(dataset) { return dataset.isEmpty(); }
     },
